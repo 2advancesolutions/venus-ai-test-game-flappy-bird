@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird - React Edition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Press Start 2P', 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+        }
+
+        #root {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .game-container {
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+
+        .game-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .score {
+            position: absolute;
+            top: 30px;
+            font-size: 48px;
+            color: white;
+            text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .game-over-screen {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            pointer-events: all;
+        }
+
+        .game-over-screen h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #ff6b6b;
+        }
+
+        .game-over-screen p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .game-over-screen button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-family: 'Press Start 2P', 'Courier New', monospace;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 0 #2d7a2f;
+            transition: transform 0.1s;
+        }
+
+        .game-over-screen button:hover {
+            background: #5DBE4A;
+        }
+
+        .game-over-screen button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #2d7a2f;
+        }
+
+        .start-screen {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            pointer-events: all;
+        }
+
+        .start-screen h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #FFC34D;
+        }
+
+        .start-screen p {
+            font-size: 14px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .start-screen button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-family: 'Press Start 2P', 'Courier New', monospace;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 0 #2d7a2f;
+            transition: transform 0.1s;
+        }
+
+        .start-screen button:hover {
+            background: #5DBE4A;
+        }
+
+        .start-screen button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #2d7a2f;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- React and Babel from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Game Code -->
+    <script type="text/babel" src="game.jsx"></script>
+</body>
+</html>
