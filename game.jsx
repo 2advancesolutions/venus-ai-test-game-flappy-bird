@@ -489,7 +489,7 @@ function FlappyBirdGame() {
                 width={GAME_CONFIG.WIDTH}
                 height={GAME_CONFIG.HEIGHT}
                 onClick={handleJump}
-                style={{ cursor: gameState === 'playing' ? 'pointer' : 'default' }}
+                style={{ cursor: gameState !== 'gameOver' ? 'pointer' : 'default' }}
             />
             <div className="game-overlay">
                 {gameState === 'playing' && (
